@@ -1,0 +1,147 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 left-side">
+      <app-sidenav></app-sidenav>
+    </div>
+    <div class="col-md-10 right-side">
+      <div *ngIf="isPkAvailable" class="row dashboardScreen">
+        <!-- <h3>PK available fetch follower list</h3> -->
+          <div class="col-md-6 account_title">
+            {{account_details.name}}'s dashboard:
+          </div>
+          <div class="col-md-6">
+            <a class="btn purple" href="account/edit/{{account_id}}" role="button">Edit Account</a>
+          </div>
+        <!-- Todays Delivery -->
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              TODAY'S DELIVERIES
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="card col-md-6 card-common">
+                  <div class="card-header"> Like </div>
+                  <div class="card-body">
+                    <ul *ngIf="followerList">
+                      <li *ngFor="let follower of todayLikeDelivery" >
+                        <div class="">
+                          <img src="{{follower.profile_pic}}" alt="{{follower.username}}"/>
+                          <span> {{follower.username}}</span>
+                          <span class="badge badge-secondary float-right">{{follower.like_time}}</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="card col-md-6 card-common">
+                  <div class="card-header"> Messages </div>
+                  <div class="card-body">
+                    <ul *ngIf="followerList">
+                      <li *ngFor="let follower of todayMessageDelivery" >
+                        <div class="">
+                          <img src="{{follower.profile_pic}}" alt="{{follower.username}}"/>
+                          <span> {{follower.username}}</span>
+                          <span class="badge badge-secondary float-right">{{follower.message_time}}</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Previous Delivery -->
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              PREVIOUS DELIVERIES
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="card col-md-6 card-common">
+                  <div class="card-header"> Like </div>
+                  <div class="card-body">
+                    <ul *ngIf="followerList">
+                      <li *ngFor="let follower of previousLikeDelivery" >
+                        <div class="">
+                          <img src="{{follower.profile_pic}}" alt="{{follower.username}}"/>
+                          <span> {{follower.username}}</span>
+                          <span class="badge badge-secondary float-right">{{follower.like_date}} - {{follower.like_time}}</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="card col-md-6 card-common">
+                  <div class="card-header"> Messages </div>
+                  <div class="card-body">
+                    <ul *ngIf="followerList">
+                      <li *ngFor="let follower of previousMessageDelivery" >
+                        <div class="">
+                          <img src="{{follower.profile_pic}}" alt="{{follower.username}}"/>
+                          <span> {{follower.username}}</span>
+                          <span class="badge badge-secondary float-right">{{follower.message_date}} - {{follower.message_time}}</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- future Deliveries -->
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              FUTURE DELIVERIES
+            </div>
+            <div class="card-body">
+              <!-- <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a> -->
+              <div class="row">
+                <div class="card col-md-6 card-common">
+                  <div class="card-header"> Like </div>
+                  <div class="card-body">
+                    <ul *ngIf="followerList">
+                      <li *ngFor="let follower of followerList | future:futureFilterArgs" >
+                        <div class="">
+                          <img src="{{follower.profile_pic}}" alt="{{follower.username}}"/>
+                          <span> {{follower.username}}</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="card col-md-6 card-common">
+                  <div class="card-header"> Messages </div>
+                  <div class="card-body">
+                    <ul *ngIf="followerList">
+                      <li *ngFor="let follower of followerList | future:futureFilterArgs" >
+                        <div class="">
+                          <img src="{{follower.profile_pic}}" alt="{{follower.username}}"/>
+                          <span> {{follower.username}}</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="!isPkAvailable" class="row dashboardScreen" style="background-color: #ff9a9a">
+        <div class="buttonGrp col-md-2 offset-md-1">
+          <a class="btn btn-primary" href="account/edit/{{account_id}}" role="button">Edit Account</a>
+        </div>
+        <div class="col-md-2 offset-md-1">
+          <a class="btn btn-warning" (click)="setupInstagram()" role="button">Setup Instagram</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

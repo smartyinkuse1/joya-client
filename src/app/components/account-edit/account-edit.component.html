@@ -1,0 +1,91 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 left-side">
+      <app-sidenav></app-sidenav>
+    </div>
+    <div class="col-md-10 right-side">
+      <h3>Edit Account</h3>
+      <form (ngSubmit)="editUser()" #addUserForm="ngForm" style="padding-bottom: 5em;">
+        <div class="form-group row">
+          <label for="name" class="label-check col-md-2">Account Name</label>
+          <div class="col-md-10">
+            <input type="text" id="name" [(ngModel)]="newUserObj.name" name="name" #name="ngModel" class="form-control" placeholder="Name">  
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="type" class="label-check col-md-2">Account Type</label>
+          <div class="col-md-10">
+            <select id="type" [(ngModel)]="newUserObj.type" name="type" #type="ngModel" class="form-control">
+              <option value="sampler">Sampler</option>
+              <option value="small">Small</option>
+              <option value="medium">Medium</option>
+              <option value="large">Large</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="contact_name" class="label-check col-md-2">Contact Name</label>
+          <div class="col-md-10">
+            <input type="text" id="contact_name" [(ngModel)]="newUserObj.contact_name" name="contact_name" #contact_name="ngModel" class="form-control" placeholder="Contact Name">  
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="email" class="label-check col-md-2">Email</label>
+          <div class="col-md-10">
+            <input type="text" id="email" [(ngModel)]="newUserObj.email" name="email" #email="ngModel" class="form-control" placeholder="Email">  
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="phone" class="label-check col-md-2">Phone</label>
+          <div class="col-md-10">
+            <input type="text" id="phone" [(ngModel)]="newUserObj.phone" name="phone" #phone="ngModel" class="form-control" placeholder="Phone">  
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="username" class="label-check col-md-2">Instagram Username</label>
+          <div class="col-md-10">
+            <input type="text" id="username" [(ngModel)]="newUserObj.username" name="username" #username="ngModel" class="form-control" placeholder="Instagram Username">  
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="password" class="label-check col-md-2">Instagram Password</label>
+          <div class="col-md-10">
+            <input type="text" id="password" [(ngModel)]="newUserObj.password" name="password" #password="ngModel" class="form-control" placeholder="Instagram Password">  
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-md-10 offset-md-2">
+            <div class="msgHeader">Message</div>
+            <textarea [(ngModel)]="newUserObj.message1" name="message1" #message1="ngModel"></textarea> 
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-md-10 offset-md-2">
+            <div class="msgHeader">Message</div>
+            <textarea [(ngModel)]="newUserObj.message2" name="message2" #message2="ngModel"></textarea> 
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-md-10 offset-md-2">
+            <div class="msgHeader">Message</div>
+            <textarea [(ngModel)]="newUserObj.message3" name="message3" #message3="ngModel"></textarea> 
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-md-10 offset-md-2">
+            <div class="msgHeader">Message</div>
+            <textarea [(ngModel)]="newUserObj.message4" name="message4" #message4="ngModel"></textarea> 
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-md-10 offset-md-2">
+            <div class="msgHeader">Message</div>
+            <textarea [(ngModel)]="newUserObj.message5" name="message5" #message5="ngModel"></textarea> 
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+        <p class="text-danger" style="text-align:center;" *ngIf="errorMessage">{{errorMessage}}</p>
+      </form>
+    </div>
+  </div>
+</div>

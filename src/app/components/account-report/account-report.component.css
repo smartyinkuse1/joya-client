@@ -1,0 +1,8 @@
+#htmlData {
+    visibility: hidden;
+}
+.message-container{
+    padding: 1em;
+    border:1px solid grey;
+    font-size: 1em;
+}

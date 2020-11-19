@@ -1,0 +1,41 @@
+.dashboardScreen{
+    min-height: 1024px;
+    padding: 1em;
+}
+.dashboardScreen .btn{
+    cursor: pointer;
+}
+.account_title{
+    font-size: 1.5em;
+}
+.card{
+    padding: 0px;
+    margin: 0px;
+}
+.card-header{
+    background-color: #313131;
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+}
+.purple {
+    background-color: #8832ce;
+}
+.card-common .card-header{
+    background-color: #8832ce;
+    color: #fff;
+}
+.card-common .card-body{
+    max-height: 300px;
+    overflow-y: scroll;
+}
+.card-common .card-body img{
+    width: 30px;
+    font-size: 10px;
+}
+.card-body ul{
+    list-style-type: none;
+}
+.card-body ul li{
+    padding: 5px;
+}

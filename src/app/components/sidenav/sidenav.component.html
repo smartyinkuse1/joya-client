@@ -1,0 +1,17 @@
+<div class="row" *ngIf="isUserLoggedIn">
+  <a class="navbar-brand" [routerLink]="['/login']" style="text-align: center;"><img class="joyo-img" src="assets/images/logo.jpg" /></a>
+  <div class="alert alert-primary clickIt" (click)="redirectUserToReport()" role="alert">
+    Reports
+  </div>
+  <div class="alert alert-primary clickIt"(click)="redirectUserToCreate()" role="alert">
+    Create Another account
+  </div>
+  <div class="alert alert-primary clickIt" (click)="toogleAccounts()"  role="alert">
+    Accounts >
+  </div>
+  <div class="submenu" *ngIf="accountViewStatus">
+    <div *ngFor="let person of accountList; let i = index" class="alert clickIt" role="alert">
+      <a href="account/dashboard/{{person.account_id}}">({{i+1}}). {{person.name}}</a>
+    </div>
+  </div>
+</div>

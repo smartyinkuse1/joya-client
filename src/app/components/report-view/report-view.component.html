@@ -1,0 +1,187 @@
+<div class="container-fluid" id="htmlData">
+  <label class="label"><h2>Report of: {{docHeader}}</h2></label>
+  <div class="container-fluid" *ngIf="toShow">
+    <h3>Likes</h3>
+    <div class="row like_table">
+      <table class="table table-bordered">
+        <thead>
+          <tr class="table-primary">
+            <th>#</th>
+            <th>FullName</th>
+            <th>Username</th>
+            <th>Date</th>
+            <th>time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of currentReportData.likes; index as i">
+            <td>{{i+1}}</td>
+            <td>{{user.fullname}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.like_date}}</td>
+            <td>{{user.like_time}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="row">
+      <div class="col-md-12"><h3>Messages 1</h3></div>
+      <div class="col-md-12" style="padding: 1em; border: 1px solid grey;">
+        {{currentReportData.message_text[0].message1}}
+      </div>
+      <div class="table-responsive message_table">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Fullname</th>
+              <th>Username</th>
+              <th>Message</th>
+              <th>Date</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of currentReportData.messages | messagefilter: 1; index as i">
+              <td>{{i+1}}</td>
+              <td>{{user.fullname}}</td>
+              <td>{{user.username}}</td>
+              <td>{{user.message_count}}</td>
+              <td>{{user.message_date}}</td>
+              <td>{{user.message_time}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- message2 -->
+
+    <div class="row">
+      <div class="col-md-12"><h3>Messages 2</h3></div>
+      <div class="col-md-12" style="padding: 1em; border: 1px solid grey;">
+        {{currentReportData.message_text[0].message2}}
+      </div>
+      <div class="table-responsive message_table">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Fullname</th>
+              <th>Username</th>
+              <th>Message</th>
+              <th>Date</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of currentReportData.messages | messagefilter: 2; index as i">
+              <td>{{i+1}}</td>
+              <td>{{user.fullname}}</td>
+              <td>{{user.username}}</td>
+              <td>{{user.message_count}}</td>
+              <td>{{user.message_date}}</td>
+              <td>{{user.message_time}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- message 3 -->
+
+    <div class="row">
+      <div class="col-md-12"><h3>Messages 3</h3></div>
+      <div class="col-md-12" style="padding: 1em; border: 1px solid grey;">
+        {{currentReportData.message_text[0].message3}}
+      </div>
+      <div class="table-responsive message_table">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Fullname</th>
+              <th>Username</th>
+              <th>Message</th>
+              <th>Date</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of currentReportData.messages | messagefilter: 3; index as i">
+              <td>{{i+1}}</td>
+              <td>{{user.fullname}}</td>
+              <td>{{user.username}}</td>
+              <td>{{user.message_count}}</td>
+              <td>{{user.message_date}}</td>
+              <td>{{user.message_time}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- message 4 -->
+    <div class="row">
+      <div class="col-md-12"><h3>Messages 4</h3></div>
+      <div class="col-md-12" style="padding: 1em; border: 1px solid grey;">
+        {{currentReportData.message_text[0].message4}}
+      </div>
+      <div class="table-responsive message_table">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Fullname</th>
+              <th>Username</th>
+              <th>Message</th>
+              <th>Date</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of currentReportData.messages | messagefilter: 4; index as i">
+              <td>{{i+1}}</td>
+              <td>{{user.fullname}}</td>
+              <td>{{user.username}}</td>
+              <td>{{user.message_count}}</td>
+              <td>{{user.message_date}}</td>
+              <td>{{user.message_time}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+    <!-- message 5 -->
+    <div class="row">
+      <div class="col-md-12"><h3>Messages 5</h3></div>
+      <div class="col-md-12" style="padding: 1em; border: 1px solid grey;">
+        {{currentReportData.message_text[0].message5}}
+      </div>
+      <div class="table-responsive message_table">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Fullname</th>
+              <th>Username</th>
+              <th>Message</th>
+              <th>Date</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of currentReportData.messages | messagefilter: 5; index as i">
+              <td>{{i+1}}</td>
+              <td>{{user.fullname}}</td>
+              <td>{{user.username}}</td>
+              <td>{{user.message_count}}</td>
+              <td>{{user.message_date}}</td>
+              <td>{{user.message_time}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

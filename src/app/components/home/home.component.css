@@ -1,0 +1,10 @@
+.left-side {
+    border: 1px solid;
+    height: 50em;
+}
+
+.right-side {
+    background-color:#d8d8d8;
+    border: 1px solid;
+    height: 50em;
+}
