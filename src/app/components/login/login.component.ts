@@ -10,10 +10,12 @@ import { LoginServiceService } from 'src/app/services/login-service/login-servic
 export class LoginComponent implements OnInit {
 
   tfaFlag: boolean = false
-  userObject = {
+  userObject: any= {
     uname: "",
-    upass: ""
+    upass: "",
+    authCode: ""
   }
+  authcode: any
   errorMessage: string = null
   constructor(private _loginService: LoginServiceService, private _router: Router) {
   }
@@ -22,6 +24,8 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser() {
+    console.log(this.userObject);
+    
     this._loginService.loginAuth(this.userObject).subscribe((data) => {
       this.errorMessage = null;
       console.log(data);
