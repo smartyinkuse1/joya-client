@@ -11,7 +11,7 @@
         #authcode="ngModel" [(ngModel)]="userObject.authcode" placeholder="Two-Factor Auth code"
         title="Please enter the code" required>
       <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit"
-        [disabled]="uname?.errors?.required || upass?.errors?.required || (this.tfaFlag && authcode?.errors?.required)">Sign
+        [disabled]="uname?.errors?.required || upass?.errors?.required || (this.tfaFlag)">Sign
         in</button>
       <p style="text-align:center;">Want to reset login? <a [routerLink]="['/register']">Register
           here</a></p>
